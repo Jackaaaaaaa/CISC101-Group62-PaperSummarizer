@@ -6,11 +6,12 @@ Ensure safety, constraint compliance, and hallucination mitigation across the en
 ## **Responsibilities**
 - **Missing Sections**
   - Block summary generation for missing sections.  
-  - Provide a placeholder: “Section not found in document.”
+  - Provide a placeholder: “Section not found in document.” in that section. 
 
 - **Empty or Short Sections (<50 words)**
   - Summaries must accurately reflect limited text.  
   - Glossaries may be minimal or absent.
+  - Provde a placeholder: "Section too short." in that section. 
 
 - **Hallucination Mitigation**
   - Do not invent experiments, results, citations, or arguments.  
