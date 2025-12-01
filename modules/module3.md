@@ -6,11 +6,12 @@ Ensure safety, constraint compliance, and hallucination mitigation across the en
 ## **Responsibilities**
 - **Missing Sections**
   - Block summary generation for missing sections.  
-  - Provide a placeholder: “Section not found in document.”
+  - Provide a placeholder: “Section not found in document.” in that section. 
 
 - **Empty or Short Sections (<50 words)**
   - Summaries must accurately reflect limited text.  
   - Glossaries may be minimal or absent.
+  - Provde a placeholder: "Section too short." in that section. 
 
 - **Hallucination Mitigation**
   - Do not invent experiments, results, citations, or arguments.  
@@ -21,6 +22,11 @@ Ensure safety, constraint compliance, and hallucination mitigation across the en
   - Chunk the paper when needed and recombine results.  
   - Never infer missing chunk content.  
   - Maintain section order and coherence.
+ 
+- **Strict evidence mode**
+  - Ask for input of "strict" or "unstrict" for "evidence_mode"
+    - if evidence_mode = "strict", Only include claims, equations, and results that appear in the provided text. If lack of enough           information, output "{Not enough information from source}" for that section.
+    - if evidence_mode = "unstrict", neglect "evidence_mode" and maintain output as defiend by the other parameters. 
 
 ## **Outputs**
 - Validated section summaries  
